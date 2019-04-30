@@ -3,6 +3,7 @@ FROM python:3-alpine
 MAINTAINER Marko  "marko.lubarda@integrationalpha.com"
 
 RUN mkdir -p /var/www/app
+RUN apt-get install
 
 WORKDIR /var/www/app
 
