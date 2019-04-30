@@ -1,0 +1,142 @@
+{
+    "type": "database",
+    "name": "db",
+    "objects": [
+        {
+            "type": "table",
+            "database": null,
+            "name": "category",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE category (\n\tid INTEGER NOT NULL, \n\tname VARCHAR(50), \n\tPRIMARY KEY (id)\n)",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "name",
+                    "type": "VARCHAR"
+                }
+            ],
+            "constraints": [
+                {
+                    "type": "PRIMARY KEY",
+                    "definition": "PRIMARY KEY (id)\n"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "Blue Chip Equities"
+                ],
+                [
+                    2,
+                    "Emerging Markets Asia"
+                ],
+                [
+                    3,
+                    "FinTech Private Equity"
+                ],
+                [
+                    4,
+                    "Factor Investing Strategies"
+                ]
+            ]
+        },
+        {
+            "type": "table",
+            "database": null,
+            "name": "idea",
+            "withoutRowId": true,
+            "ddl": "CREATE TABLE idea (id INTEGER NOT NULL, title VARCHAR (80), body TEXT, pub_date DATETIME, category_id INTEGER, PRIMARY KEY (id), FOREIGN KEY (category_id) REFERENCES category (id))",
+            "columns": [
+                {
+                    "name": "id",
+                    "type": "INTEGER",
+                    "constraints": [
+                        {
+                            "type": "NOT NULL",
+                            "definition": "NOT NULL"
+                        }
+                    ]
+                },
+                {
+                    "name": "title",
+                    "type": "VARCHAR"
+                },
+                {
+                    "name": "body",
+                    "type": "TEXT"
+                },
+                {
+                    "name": "pub_date",
+                    "type": "DATETIME"
+                },
+                {
+                    "name": "category_id",
+                    "type": "INTEGER"
+                }
+            ],
+            "constraints": [
+                {
+                    "type": "PRIMARY KEY",
+                    "definition": "PRIMARY KEY (id)"
+                },
+                {
+                    "type": "FOREIGN KEY",
+                    "definition": "FOREIGN KEY (category_id) REFERENCES category (id)"
+                }
+            ],
+            "rows": [
+                [
+                    1,
+                    "European Automotive Strong on EAV",
+                    "European automotive firms have caught up strong on the latest trend for Electric Autonomous Vehicles, short EAVs. In comparison to their US and Asian counterparts European firms have decided to work together and share their data collected individually thus far. The consortium of European car manufacturers sharing their sensor data try to achieve a joint and universal AI model that supports autonomous driving.",
+                    "2018-08-11 15:56:29.200201",
+                    1
+                ],
+                [
+                    2,
+                    "EM bulls are ringing in the race",
+                    "On track for their worst year since 2015, developing markets are getting a tailwind from the U.S.-China trade truce, a weakening dollar and a more cautious tone from the Federal Reserve. Morgan Stanley forecast next year will feature a comeback for emerging markets as external headwinds ease. John Woods, chief investment officer for Asia Pacific at Credit Suisse Group AG, reckons “EM is looking pretty cheap” after a turbulent year.",
+                    "2019-01-11 16:38:48.496609",
+                    2
+                ],
+                [
+                    3,
+                    "Pick-up in activity after ruling",
+                    "European stock blue-chip indices have registered strong gains in the Tuesday session. The DAX and CAC have climbed about 1.0%, while the FTSE has gained 1.38%. On the release front, German Services PMI improved to 53.1, while eurozone Services PMI remained steady at 51.2 points. Eurozone retail sales plunged 1.6%, its worst showing since December 2013.  Later in the day, President Trump delivers the State of Union address before Congress. On Wednesday, Germany releases factory orders.",
+                    "2019-02-11 12:38:51.149464",
+                    1
+                ],
+                [
+                    4,
+                    "Bank Shares Boosted",
+                    "Bank shares have boosted blue-chip indices on Tuesday. In France, Credite Agricole and BNP Paribas have gained over 2.0%, while Standard Chartered has climbed 1.9%. With European bank sectors rebounding, European stock markets could continue to gain ground this week.",
+                    "2019-02-13 16:38:51.508791",
+                    1
+                ],
+                [
+                    5,
+                    "XL Group new in EU Blue Chips",
+                    "XL Group Plc is a global insurance and reinsurance entity, operating the newly acquired XL Catlin brand, offering property, casualty and specialty products to industrial, commercial and professional firms, insurance companies and other enterprises.",
+                    "2019-04-01 10:07:47.702359",
+                    1
+                ],
+                [
+                    6,
+                    "Momentum Equity Overlays",
+                    " More and more AI boutiques help traditional asset managers to escape the sideways market, no volatility dead-end by offering momentum overlay strategies. These highly specialised quant shops have created strategies that analyse and act on market momentum by using advanced analytics to assess the current order book flows and trends. Some of these boutiques have track records to improve performance of a traditional buy & hold strategy by as much as 5-8%.",
+                    "2019-02-14 09:37:36.547",
+                    4
+                ]
+            ]
+        }
+    ]
+}
